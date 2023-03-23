@@ -1,4 +1,5 @@
 import { corsAllow } from "@/services/corsAllowApi";
+var schema = process.env.NEXT_PUBLIC_CORS_SCHEMA || "http";
 var host = process.env.NEXT_PUBLIC_CORS_HOST || "localhost";
 var port = process.env.NEXT_PUBLIC_CORS_PORT || 8080;
 
@@ -6,7 +7,7 @@ async function handler(req, res) {
   try {
     if (req.query.url) {
       const url = req.query.url;
-      const addr = `${host}:${port}/${url}`;
+      const addr = `${schema}://${host}:${port}/${url}`;
       return res.redirect(addr);
     } else {
       return res.status(200).json({
@@ -16,7 +17,7 @@ async function handler(req, res) {
     }
   } catch (error) {
     console.log(error);
-    return res.status(500).json({ error: error });
+    return res.status(500).json(`Erro: ${error.message}`);
   }
 }
 

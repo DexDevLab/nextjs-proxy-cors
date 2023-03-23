@@ -153,6 +153,11 @@ Para usar a aplicação, crie um arquivo `.env.local` com as seguintes variávei
 
 <br>
 
+### v0.0.3-230323
+
+- Criação de variável de ambiente para definir schema HTTP
+- Alteração de saída para erros no Servidor
+
 ### v0.0.2-230323
 
 - Ajuste na rota CORS para receber o schema HTTP e manipular exceções
