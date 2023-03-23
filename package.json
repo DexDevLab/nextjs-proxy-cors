@@ -1,7 +1,7 @@
 {
   "name": "nextjs-proxy-cors",
   "description": "Servidor Next.js de Proxy CORS, um fork do projeto de Rob--W",
-  "version": "0.0.1-230323",
+  "version": "0.0.2-230323",
   "private": true,
   "license": "MIT",
   "scripts": {

@@ -136,7 +136,7 @@ Para usar a aplicação, crie um arquivo `.env.local` com as seguintes variávei
 
 | Variável      | Uso   |
 |---------------|-------|
-|`NEXT_PUBLIC_CORS_HOST` | Endereço que será usado como host para execução do Servidor CORS. | |
+|`NEXT_PUBLIC_CORS_HOST` | Endereço que será usado como host para execução do Servidor CORS. Deve estar incluído o schema e as barras duplas ('http://'). | |
 |`NEXT_PUBLIC_CORS_PORT` | Porta de serviço do Servidor CORS. | |
 |`NEXT_PUBLIC_CORS_WHITELIST` | Lista de endereços permitidos para requisitar dados do Servidor CORS. Caso esteja vazio, o Servidor CORS aceita requisições de qualquer endereço. Caso haja alguma url, bloqueará todos os tipos de requisição, exceto para os endereços aqui listados. | |
 |`NEXT_PUBLIC_CORS_BLACKLIST` | Lista de endereços proibidos de requisitar dados do Servidor CORS. | |
@@ -152,6 +152,10 @@ Para usar a aplicação, crie um arquivo `.env.local` com as seguintes variávei
 </a>
 
 <br>
+
+### v0.0.2-230323
+
+- Ajuste na rota CORS para receber o schema HTTP e manipular exceções
 
 ### v0.0.1-230323
 
