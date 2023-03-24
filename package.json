@@ -1,14 +1,17 @@
 {
   "name": "nextjs-proxy-cors",
   "description": "Servidor Next.js de Proxy CORS, um fork do projeto de Rob--W",
-  "version": "0.0.5-230324",
+  "version": "0.0.6-230324",
+  "main": "api/index.js",
   "private": true,
   "license": "MIT",
   "scripts": {
-    "start": "yarn dev"
+    "start": "vercel dev",
+    "deploy": "vercel deploy --prod"
   },
   "dependencies": {
     "http-proxy-middleware": "^2.0.6",
+    "next": "^13.2.4",
     "nextjs-cors": "^2.1.2",
     "vercel": "^28.18.1"
   }
