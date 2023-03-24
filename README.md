@@ -1,5 +1,5 @@
 <h1 align="center">nextjs-proxy-cors</h1>
-<p align=center><i align="center">Servidor Next.js de Proxy CORS, um fork do projeto de <a href="https://github.com/Rob--W/cors-anywhere">Rob--W</a>.</i></p>
+<p align=center><i align="center">Servidor Proxy CORS baseado em Next.js para deploy via Vercel</i></p>
 
 <br>
 
@@ -42,7 +42,7 @@
 
 <br>
 
-Este repositório tem por objetivo comportar um fork para o projeto original do desenvolvedor [Rob--W](https://github.com/Rob--W/cors-anywhere). Este repositório funciona como um fork para ser executado com Vercel, usando Next.js como framework de aplicação e gerenciamento de rota. Também pode funcionar como um proxy web genérico (veja na seção 'Variáveis de Ambiente')
+Este projeto pode ser utilizado para subir um servidor CORS que transmite os headers CORS (e quaisquer outros desejáveis) para a entrada e saída das requisições na forma de um middleware. Ele direciona todas as chamadas de rota de API (diretório /api) para fazerem rota com o Proxy, o qual suprime o caminho original e transfere o endereço de destino a ser acessado com os headers.
 
 <hr>
 
@@ -54,9 +54,9 @@ Este repositório tem por objetivo comportar um fork para o projeto original do 
 
 <br>
 
-- Lorem ipsum dolor sit amet;
+-
 
-<hr> -->
+<hr>  -->
 
 <a name="section-stack">
 
@@ -76,7 +76,7 @@ Este repositório tem por objetivo comportar um fork para o projeto original do 
 
 <hr>
 
-<a name="section-documentacao">
+<!-- <a name="section-documentacao">
 
 ## Documentação
 
@@ -84,12 +84,10 @@ Este repositório tem por objetivo comportar um fork para o projeto original do 
 
 <br>
 
-<!-- - [Lorem](https://miro.com/app/board/uXjdfgsdgVPWCiaDo=/?share_link_id=713196550342) -->
-
-Documentação adicional pode ser encontrada [aqui](https://github.com/Rob--W/cors-anywhere/blob/master/README.md).
+[Lorem](https://miro.com/app/board/uXjdfgsdgVPWCiaDo=/?share_link_id=713196550342) 
 
 <hr>
-
+ -->
 <a name="section-instrucoes">
 
 ## Instruções
@@ -114,15 +112,15 @@ git clone https://github.com/dexdevlab/nextjs-proxy-cors.git
 
 </a>
 
-1 - Execute `yarn cors` ou `npm run cors` do terminal dentro do diretório do projeto. A aplicação irá ser executada na porta 8080 como padrão.
+1 - Execute `yarn dev` ou `npm run dev` do terminal dentro do diretório do projeto. A aplicação irá ser executada na porta 3000 como padrão.
 
-2 - Para realizar o redirecionamento de um site, faça uma requisição `GET` no seguinte formato: `${server_address}:${server_port}/${destination_url}`. Por exemplo: `http://localhost:8080/https://http.cat/100`. Esta requisição devolverá o endereço com os HEADERS pertinentes ao CORS na entrada e na saída, como um bypass.
+2 - Para realizar o redirecionamento de um site, faça uma requisição `GET` no seguinte formato: `${server_address}:${server_port}/api?url=${destination_url}`. Por exemplo: `http://localhost:3000/api?url=https://http.cat/100`. Esta requisição devolverá o endereço com os HEADERS pertinentes ao CORS na entrada e na saída, como um bypass.
 
 **NOTA: Não foram testados outros métodos de requisição HTTP por não haver necessidade no momento.**
 
 <hr>
 
-<a name="section-vars">
+<!-- <a name="section-vars">
 
 ### Variáveis de Ambiente
 
@@ -135,13 +133,8 @@ Para usar a aplicação, crie um arquivo `.env` com as seguintes variáveis de a
 | Variável      | Uso   |
 |---------------|-------|
 |`NEXT_PUBLIC_CORS_HOST` | Endereço que será usado como host para execução do Servidor CORS. Deve estar incluído o schema e as barras duplas ('http://'). | |
-|`NEXT_PUBLIC_CORS_PORT` | Porta de serviço do Servidor CORS. | |
-|`NEXT_PUBLIC_CORS_WHITELIST` | Lista de endereços permitidos para requisitar dados do Servidor CORS. Caso esteja vazio, o Servidor CORS aceita requisições de qualquer endereço. Caso haja alguma url, bloqueará todos os tipos de requisição, exceto para os endereços aqui listados. | |
-|`NEXT_PUBLIC_CORS_BLACKLIST` | Lista de endereços proibidos de requisitar dados do Servidor CORS. | |
-|`NEXT_PUBLIC_CORS_RATELIMIT` | Rate Limit para reduzir a quantidade de acessos em um determinado escopo de tempo. Por exemplo, `NEXT_PUBLIC_CORS_RATELIMIT = '1 5'` permitirá apenas 1 requisição a cada 5 minutos. Outras formas de ajuste são permitidas. Verifique a [documentação do CORS Anywhere](https://github.com/Rob--W/cors-anywhere) para mais detalhes.  | |
-|`NEXT_PUBLIC_CORS_USEASWEBPROXY` | Se definido como `true`, o Servidor CORS irá redirecionar requisições mesmo que não hajam headers na origem. Útil para testar requisições diretamente do browser. Se ausente, automaticamente assumirá como `false` | |
 
-<hr>
+<hr> -->
 
 <a name="section-changelog">
 
@@ -150,6 +143,10 @@ Para usar a aplicação, crie um arquivo `.env` com as seguintes variáveis de a
 </a>
 
 <br>
+
+### v0.0.8-230324
+
+- Atualização da Documentação
 
 ### v0.0.7-230324
 

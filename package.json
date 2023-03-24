@@ -1,7 +1,7 @@
 {
   "name": "nextjs-proxy-cors",
-  "description": "Servidor Next.js de Proxy CORS, um fork do projeto de Rob--W",
-  "version": "0.0.7-230324",
+  "description": "Servidor Proxy CORS baseado em Next.js para deploy via Vercel",
+  "version": "0.0.8-230324",
   "main": "api/index.js",
   "private": true,
   "license": "MIT",
@@ -11,6 +11,8 @@
     "deploy": "vercel deploy --prod"
   },
   "dependencies": {
+    "eslint": "^8.36.0",
+    "eslint-config-next": "^13.2.4",
     "http-proxy-middleware": "^2.0.6",
     "next": "^13.2.4",
     "nextjs-cors": "^2.1.2",
