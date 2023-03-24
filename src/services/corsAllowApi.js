@@ -6,7 +6,7 @@
 const corsAllow = (fn) => async (req, res) => {
   if (!process.env.NEXT_PUBLIC_CORS_STATE) {
     console.log("Servidor interno CORS offline. Iniciando servidor...");
-    const corsServer = require("./corsServerInit");
+    const corsServer = require("./corsServerInitNext");
     corsServer;
   }
   res.setHeader("Access-Control-Allow-Credentials", true);

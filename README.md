@@ -19,7 +19,7 @@
 <a href=""><img src="https://img.shields.io/github/contributors/dexdevlab/nextjs-proxy-cors?style=plastic" height="22" alt="Contributors"></a>
 
 <a href=""><img src="https://img.shields.io/github/forks/dexdevlab/nextjs-proxy-cors?style=plastic" height="22" alt="Fork"></a>
-<a href=""><img src="https://img.shields.io/badge/version-0.0.1-140126?style=plastic" height="22" alt="Version"></a>
+<a href=""><img src="https://img.shields.io/badge/version-0.0.4-140126?style=plastic" height="22" alt="Version"></a>
 <a href="https://github.com/dexdevlab/nextjs-proxy-cors/blob/main/LICENSE"><img src="https://img.shields.io/github/license/dexdevlab/nextjs-proxy-cors?&style=plastic" height="22" alt="License"></a>
 
 <!-- || [Conteúdo](#section-conteudo) || [Características](#section-caracteristicas) || [Stack](#section-stack) || [Documentação](#section-documentacao) || [Instruções](#section-instrucoes) || -->
@@ -114,11 +114,9 @@ git clone https://github.com/dexdevlab/nextjs-proxy-cors.git
 
 </a>
 
-1 - Execute `yarn dev` ou `npm run dev` do terminal dentro do diretório do projeto. A aplicação irá ser executada na porta 3000 como padrão.
+1 - Execute `yarn cors` ou `npm run cors` do terminal dentro do diretório do projeto. A aplicação irá ser executada na porta 8080 como padrão.
 
-2 - Para realizar o redirecionamento de um site, faça uma requisição `GET` no seguinte formato: `${server_address}:${server_port}/api/cors?url=${destination_url}`. Por exemplo: `http://localhost:3000/api/cors?url=https://http.cat/100`. Esta requisição devolverá o endereço com os HEADERS pertinentes ao CORS na entrada e na saída, como um bypass.
-
-**NOTA: Requisições GET pelo navegador NÃO RETORNAM os endereços de recursos (imagens, arquivos CSS etc) na maneira correta, causando falhas visuais ou de estilo nos endereços quando carregados dessa maneira. Atualmente estou trabalhando em uma solução para o problema.**
+2 - Para realizar o redirecionamento de um site, faça uma requisição `GET` no seguinte formato: `${server_address}:${server_port}/${destination_url}`. Por exemplo: `http://localhost:8080/https://http.cat/100`. Esta requisição devolverá o endereço com os HEADERS pertinentes ao CORS na entrada e na saída, como um bypass.
 
 **NOTA: Não foram testados outros métodos de requisição HTTP por não haver necessidade no momento.**
 
@@ -132,7 +130,7 @@ git clone https://github.com/dexdevlab/nextjs-proxy-cors.git
 
 <br>
 
-Para usar a aplicação, crie um arquivo `.env.local` com as seguintes variáveis de ambiente:
+Para usar a aplicação, crie um arquivo `.env` com as seguintes variáveis de ambiente:
 
 | Variável      | Uso   |
 |---------------|-------|
@@ -152,6 +150,11 @@ Para usar a aplicação, crie um arquivo `.env.local` com as seguintes variávei
 </a>
 
 <br>
+
+### v0.0.4-230324
+
+- Ajuste para execução direta sem intermédio do Next.js
+- Atualização da Documentação
 
 ### v0.0.3-230323
 
