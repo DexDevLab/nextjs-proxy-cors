@@ -1,0 +1,85 @@
+{
+  "source": {
+    "include": ["src", "README.md"],
+    "includePattern": ".+\\.js(doc|x)?$",
+    "excludePattern": "(node_modules/|docs)"
+  },
+
+  "plugins": ["plugins/markdown"],
+
+  "opts": {
+    "encoding": "utf8",
+    "readme": "./README.md",
+    "destination": "public/",
+    "recurse": true,
+    "verbose": true,
+    "template": "./node_modules/clean-jsdoc-theme",
+    "theme_opts": {
+      "theme": "light",
+      "title": "Next.js Proxy CORS - Documentação",
+      "menu": [
+        {
+          "title": "Website",
+          "link": "https://portfolio-vscode-one.vercel.app",
+          "target": "_blank",
+          "class": "some-class",
+          "id": "some-id"
+        },
+        {
+          "title": "Github",
+          "link": "https://github.com/DexDevLab",
+          "target": "_blank",
+          "class": "some-class",
+          "id": "some-id"
+        }
+      ],
+
+      "meta": [
+        {
+          "name": "author",
+          "content": "https://github.com/DexDevLab"
+        },
+        {
+          "name": "description",
+          "content": "Servidor Proxy CORS baseado em Next.js para deploy via Vercel"
+        }
+      ],
+      "search": {},
+      "create_style": "",
+      "add_style_path": [
+        {
+          "href": "https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css",
+          "integrity": "sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1",
+          "crossorigin": "anonymous"
+        }
+      ],
+      "add_scripts": "function foo(){console.log('foo')}",
+      "add_script_path": [
+        {
+          "src": "https://code.jquery.com/jquery-3.5.1.js",
+          "integrity": "sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=",
+          "crossorigin": "anonymous"
+        }
+      ],
+
+      "footer": "Made with ☕️ by <a href='https://github.com/dexdevlab'>DexDevLab</a>",
+
+      "overlay_scrollbar": {
+        "options": {}
+      },
+      "resizeable": {
+        "navbar": {
+          "min": "300",
+          "max": "600"
+        }
+      },
+      "codepen": {
+        "enable_for": ["examples"],
+        "options": {
+          "js_external": "https://code.jquery.com/jquery-3.6.0.min.js",
+          "js_pre_processor": "babel"
+        }
+      }
+    }
+  }
+}

@@ -1,20 +1,23 @@
 {
   "name": "nextjs-proxy-cors",
   "description": "Servidor Proxy CORS baseado em Next.js para deploy via Vercel",
-  "version": "v0.0.11-230325",
-  "main": "api/index.js",
+  "version": "v0.0.12-230326",
+  "main": "index.js",
   "private": true,
   "license": "MIT",
   "scripts": {
-    "dev": "next dev",
-    "start": "vercel dev",
-    "deploy": "vercel deploy --prod"
+    "dev": "jsdoc --readme README.md -c jsdoc-config.json && next dev",
+    "start": "jsdoc --readme README.md -c jsdoc-config.json && vercel dev",
+    "deploy": "vercel deploy --prod",
+    "docs": "jsdoc --readme README.md -c jsdoc-config.json"
   },
   "dependencies": {
+    "clean-jsdoc-theme": "^4.2.6",
     "eslint": "^8.36.0",
     "eslint-config-next": "^13.2.4",
-    "express-rate-limit": "^6.7.0",
     "http-proxy-middleware": "^2.0.6",
+    "jsdoc": "^4.0.2",
+    "lru-cache": "^8.0.4",
     "next": "^13.2.4",
     "nextjs-cors": "^2.1.2",
     "react": "^18.2.0",

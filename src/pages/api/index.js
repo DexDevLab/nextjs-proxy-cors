@@ -1,40 +1,25 @@
-import { createProxyMiddleware } from "http-proxy-middleware";
-import NextCors from "nextjs-cors";
-import { apiRateLimit } from "services/apiRateLimit";
-const apiProxy = createProxyMiddleware({
-  changeOrigin: true,
-  pathRewrite: {
-    "^/api": "",
-  },
-  router: (req) => customRouter(req),
-  onProxyRes(proxyRes) {
-    (proxyRes.headers["access-control-allow-origin"] = "*"),
-      (proxyRes.headers["access-control-allow-methods"] =
-        "DELETE, POST, GET, OPTIONS, PUT, PATCH"),
-      (proxyRes.headers["access-control-allow-headers"] =
-        "Origin, X-Requested-With, Content-Type, Accept");
-  },
-});
-
-const customRouter = function (req) {
-  const url = req.query["url"];
-  return url;
-};
-
-async function handler(req, res) {
-  await NextCors(req, res, {
-    methods: ["GET", "HEAD", "PUT", "PATCH", "POST", "DELETE"],
-    origin: "*",
-    optionsSuccessStatus: 200,
-  });
-  apiProxy(req, res);
+/**
+ * Rota de redirecionamento para a documentação
+ * do jsdoc. Altera o título do documento, visto que
+ * a biblioteca jsdoc não possui suporte nativo para
+ * esta função.
+ *
+ * @param {Object} req HTTP request.
+ *
+ * @param {Object} res HTTP response.
+ */
+async function api(req, res) {
+  const fs = require("fs").promises;
+  const docsIndex = "public/index.html";
+  const docsTitle = "Next.js CORS Proxy";
+  const fileDocsIndex = await fs.readFile(docsIndex, "utf8");
+  const formattedDocsIndex = fileDocsIndex
+    .replace(/Home/g, docsTitle)
+    .replace(/Global/g, "Geral");
+  await fs.writeFile(docsIndex, formattedDocsIndex, "utf-8");
+  res.setHeader("Content-Type", "text/html; charset=utf-8");
+  res.write(formattedDocsIndex);
+  res.end();
 }
 
-export default apiRateLimit(handler);
-
-export const config = {
-  api: {
-    externalResolver: true,
-    bodyParser: false,
-  },
-};
+export default api;

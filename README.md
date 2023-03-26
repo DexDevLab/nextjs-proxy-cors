@@ -1,4 +1,4 @@
-<h1 align="center">nextjs-proxy-cors</h1>
+<h1 align="center">Next.js Proxy CORS</h1>
 <p align=center><i align="center">Servidor Proxy CORS baseado em Next.js para deploy via Vercel</i></p>
 
 <br>
@@ -7,6 +7,7 @@
 
 <a href="https://vercel.com"><img src="https://img.shields.io/badge/vercel-%23000000.svg?style=plastic&logo=vercel&logoColor=white" height="22" alt="Vercel"/></a>
 <a href="https://www.javascript.com"><img src="https://img.shields.io/badge/JavaScript-%23323330.svg?style=plastic&logo=javascript&logoColor=%23F7DF1E" height="22" alt="JavaScript"/></a>
+
 <a href="https://nodejs.org/en/"><img src="https://img.shields.io/badge/node.js-6DA55F?style=plastic&logo=node.js&logoColor=white" height="22" alt="NodeJS"/></a>
 <a href="https://nextjs.org"><img src="https://img.shields.io/badge/Next-black?style=plastic&logo=next.js&logoColor=white" height="22" alt="NextJS"/></a>
 
@@ -19,12 +20,12 @@
 <a href=""><img src="https://img.shields.io/github/contributors/dexdevlab/nextjs-proxy-cors?style=plastic" height="22" alt="Contributors"></a>
 
 <a href=""><img src="https://img.shields.io/github/forks/dexdevlab/nextjs-proxy-cors?style=plastic" height="22" alt="Fork"></a>
-<a href=""><img src="https://img.shields.io/badge/version-0.0.11-140126?style=plastic" height="22" alt="Version"></a>
+<a href=""><img src="https://img.shields.io/badge/version-0.0.12-140126?style=plastic" height="22" alt="Version"></a>
 <a href="https://github.com/dexdevlab/nextjs-proxy-cors/blob/main/LICENSE"><img src="https://img.shields.io/github/license/dexdevlab/nextjs-proxy-cors?&style=plastic" height="22" alt="License"></a>
 
 <!-- || [Conteúdo](#section-conteudo) || [Características](#section-caracteristicas) || [Stack](#section-stack) || [Documentação](#section-documentacao) || [Instruções](#section-instrucoes) || -->
 
-|| [Conteúdo](#section-conteudo) || [Stack](#section-stack) || [Instruções](#section-instrucoes) ||
+|| [Conteúdo](#section-conteudo) || [Stack](#section-stack) || [Instruções](#section-instrucoes) || [Variáveis de Ambiente](#section-vars) ||
 
 <!-- || [Variáveis de Ambiente](#section-vars) || [Notas de versão](#section-changelog) || [Autores](#section-autores) || [Contato](#section-contato) || [Licença](#section-licenca) || -->
 
@@ -98,9 +99,7 @@ Este projeto pode ser utilizado para subir um servidor CORS que transmite os hea
 
 ### Utilizando o repositório como projeto
 
-</a>
-
-1 - Faça um git clone ou o download do repositório, da forma que preferir
+Faça um git clone ou o download do repositório, da forma que preferir
 
 ```bash
 
@@ -108,9 +107,9 @@ git clone https://github.com/dexdevlab/nextjs-proxy-cors.git
 
 ```
 
-### Testando a aplicação
+<br>
 
-</a>
+### Testando a aplicação
 
 1 - Execute `yarn dev` ou `npm run dev` do terminal dentro do diretório do projeto. A aplicação irá ser executada na porta 3000 como padrão.
 
@@ -118,11 +117,19 @@ git clone https://github.com/dexdevlab/nextjs-proxy-cors.git
 
 **NOTA: Não foram testados outros métodos de requisição HTTP por não haver necessidade no momento.**
 
+<br>
+
+### Instanciando no Vercel
+
+Você pode inicializar sua própria instância do Servidor Nextjs CORS clicando neste botão:
+
+<a href="https://vercel.com/new/clone?repository-url=https%3A%2F%2Fgithub.com%2Fvercel%2Fnext.js%2Ftree%2Fcanary%2Fexamples%2Fhello-world&env=NEXT_PUBLIC_RATE_LIMIT_REQUESTS,NEXT_PUBLIC_RATE_LIMIT_INTERVAL,NEXT_PUBLIC_RATE_LIMIT_USERS"><img src="https://vercel.com/button" height="30" alt="Deploy with Vercel"/></a>
+
 <hr>
 
-<!-- <a name="section-vars">
+<a name="section-vars">
 
-### Variáveis de Ambiente
+## Variáveis de Ambiente
 
 </a>
 
@@ -132,9 +139,11 @@ Para usar a aplicação, crie um arquivo `.env` com as seguintes variáveis de a
 
 | Variável      | Uso   |
 |---------------|-------|
-|`NEXT_PUBLIC_CORS_HOST` | Endereço que será usado como host para execução do Servidor CORS. Deve estar incluído o schema e as barras duplas ('http://'). | |
+|`NEXT_PUBLIC_RATE_LIMIT_REQUESTS` | Quantidade específica de requisições que podem ser feitas em um determinado intervalo. | |
+|`NEXT_PUBLIC_RATE_LIMIT_INTERVAL` | O intervalo em segundos em que a quantidade de requisições são redefinidas. Por exemplo, NEXT_PUBLIC_RATE_LIMIT_REQUESTS = 30 e NEXT_PUBLIC_RATE_LIMIT_INTERVAL = 60 significam 30 requisições a cada 60 segundos, no máximo.  | |
+|`NEXT_PUBLIC_RATE_LIMIT_USERS` | A quantidade de usuários que podem fazer requisições por intervalo. Por exemplo, NEXT_PUBLIC_RATE_LIMIT_INTERVAL = 60 e NEXT_PUBLIC_RATE_LIMIT_USERS = 50 significam um máximo de 50 diferentes usuários requisitando a cada 60 segundos.  | |
 
-<hr> -->
+<hr>
 
 <a name="section-changelog">
 
@@ -143,6 +152,12 @@ Para usar a aplicação, crie um arquivo `.env` com as seguintes variáveis de a
 </a>
 
 <br>
+
+### v0.0.12-230326
+
+- Implementação de Rate Limit
+- Atualização da documentação
+- Ajuste de rotas para documentação dinâmica
 
 ### v0.0.11-230325
 
