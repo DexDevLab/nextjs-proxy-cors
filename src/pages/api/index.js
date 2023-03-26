@@ -1,7 +1,6 @@
 import { createProxyMiddleware } from "http-proxy-middleware";
 import NextCors from "nextjs-cors";
-import { apiRateLimit } from "../services/apiRateLimit";
-
+import { apiRateLimit } from "services/apiRateLimit";
 const apiProxy = createProxyMiddleware({
   changeOrigin: true,
   pathRewrite: {
@@ -22,7 +21,7 @@ const customRouter = function (req) {
   return url;
 };
 
-async function handler (req, res) {
+async function handler(req, res) {
   await NextCors(req, res, {
     methods: ["GET", "HEAD", "PUT", "PATCH", "POST", "DELETE"],
     origin: "*",
