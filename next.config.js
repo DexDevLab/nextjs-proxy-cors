@@ -1,18 +1,23 @@
 module.exports = (phase) => {
   return {
     async redirects() {
-      return [
-        {
-          source: "/",
-          destination: "/api",
-          permanent: false,
-        },{
-          source: "/index.html",
-          destination: "/api",
-          permanent: false,
-        },
-      ];
+      if (process.env.NODE_ENV === "development") {
+        return [
+          {
+            source: "/",
+            destination: "/api",
+            permanent: false,
+          },
+          {
+            source: "/index.html",
+            destination: "/api",
+            permanent: false,
+          },
+        ];
+      } else {
+        return [];
+      }
     },
-    reactStrictMode: true
+    reactStrictMode: true,
   };
 };

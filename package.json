@@ -1,7 +1,7 @@
 {
   "name": "nextjs-proxy-cors",
   "description": "Servidor Proxy CORS baseado em Next.js para deploy via Vercel",
-  "version": "v0.0.15-230326",
+  "version": "v0.0.16-230326",
   "main": "index.js",
   "private": true,
   "license": "MIT",
