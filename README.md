@@ -153,6 +153,10 @@ Para usar a aplicação, crie um arquivo `.env` com as seguintes variáveis de a
 
 <br>
 
+### v0.0.13-230326
+
+- Ajuste de deployment no Vercel
+
 ### v0.0.12-230326
 
 - Implementação de Rate Limit
