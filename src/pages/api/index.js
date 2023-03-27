@@ -10,7 +10,7 @@
  */
 async function api(req, res) {
   const fs = require("fs").promises;
-  const docsIndex = "public/index.html";
+  const docsIndex = "src/pages/docs/index.html";
   const docsTitle = "Next.js CORS Proxy";
   const fileDocsIndex = await fs.readFile(docsIndex, "utf8");
   const formattedDocsIndex = fileDocsIndex
