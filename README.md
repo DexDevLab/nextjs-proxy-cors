@@ -20,12 +20,12 @@
 <a href=""><img src="https://img.shields.io/github/contributors/dexdevlab/nextjs-proxy-cors?style=plastic" height="22" alt="Contributors"></a>
 
 <a href=""><img src="https://img.shields.io/github/forks/dexdevlab/nextjs-proxy-cors?style=plastic" height="22" alt="Fork"></a>
-<a href=""><img src="https://img.shields.io/badge/version-0.0.14-140126?style=plastic" height="22" alt="Version"></a>
+<a href=""><img src="https://img.shields.io/badge/version-0.0.15-140126?style=plastic" height="22" alt="Version"></a>
 <a href="https://github.com/dexdevlab/nextjs-proxy-cors/blob/main/LICENSE"><img src="https://img.shields.io/github/license/dexdevlab/nextjs-proxy-cors?&style=plastic" height="22" alt="License"></a>
 
 <!-- || [Conteúdo](#section-conteudo) || [Características](#section-caracteristicas) || [Stack](#section-stack) || [Documentação](#section-documentacao) || [Instruções](#section-instrucoes) || -->
 
-|| [Conteúdo](#section-conteudo) || [Stack](#section-stack) || [Instruções](#section-instrucoes) || [Variáveis de Ambiente](#section-vars) ||
+|| [Conteúdo](#section-conteudo) || [Stack](#section-stack) || [Documentação](#section-documentacao) || [Instruções](#section-instrucoes) || [Variáveis de Ambiente](#section-vars) ||
 
 <!-- || [Variáveis de Ambiente](#section-vars) || [Notas de versão](#section-changelog) || [Autores](#section-autores) || [Contato](#section-contato) || [Licença](#section-licenca) || -->
 
@@ -77,7 +77,7 @@ Este projeto pode ser utilizado para subir um servidor CORS que transmite os hea
 
 <hr>
 
-<!-- <a name="section-documentacao">
+<a name="section-documentacao">
 
 ## Documentação
 
@@ -85,10 +85,10 @@ Este projeto pode ser utilizado para subir um servidor CORS que transmite os hea
 
 <br>
 
-[Lorem](https://miro.com/app/board/uXjdfgsdgVPWCiaDo=/?share_link_id=713196550342) 
+Documentação adicional pode ser encontrada [aqui](https://dexdevlab.github.io/nextjs-proxy-cors).
 
 <hr>
- -->
+
 <a name="section-instrucoes">
 
 ## Instruções
@@ -152,6 +152,11 @@ Para usar a aplicação, crie um arquivo `.env` com as seguintes variáveis de a
 </a>
 
 <br>
+
+### v0.0.15-230326
+
+- Ajuste na estrutura da documentação
+- Criação de branch específico para documentação
 
 ### v0.0.14-230326
 
