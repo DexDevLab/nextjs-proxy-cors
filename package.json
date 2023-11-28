@@ -13,7 +13,7 @@
     "docs": "jsdoc --readme README.md -c jsdoc-config.json"
   },
   "dependencies": {
-    "clean-jsdoc-theme": "^4.2.6",
+    "clean-jsdoc-theme": "^4.2.8",
     "eslint": "^8.36.0",
     "eslint-config-next": "^13.2.4",
     "http-proxy-middleware": "^2.0.6",
@@ -23,6 +23,6 @@
     "nextjs-cors": "^2.1.2",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
-    "vercel": "^28.18.1"
+    "vercel": "^31.2.0"
   }
 }
